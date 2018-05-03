@@ -7,13 +7,13 @@ DROP TABLE users;
 CREATE EXTERNAL TABLE users 
 (swid string, birth_dt string, gender_cd string) 
 ROW FORMAT DELIMITED FIELDS TERMINATED BY '\t' STORED AS TEXTFILE 
-LOCATION "/hdfs/location/to/users";
+LOCATION "/demo/clickstream/users";
 
 DROP TABLE products;
 CREATE EXTERNAL TABLE products
 (url string, category string) 
 ROW FORMAT DELIMITED FIELDS TERMINATED BY '\t' STORED AS TEXTFILE 
-LOCATION "/hdfs/location/to/products";
+LOCATION "/demo/clickstream/products";
 
 DROP TABLE weblogs;
 CREATE EXTERNAL TABLE 
@@ -30,7 +30,7 @@ CREATE EXTERNAL TABLE
 	country string
   ) 
 ROW FORMAT DELIMITED FIELDS TERMINATED BY '|' STORED AS TEXTFILE
-LOCATION "/hdfs/location/to/cleansed-click-data/";
+LOCATION "/demo/clickstream/rawclicks";
 
 drop view purchased_sessions;
 create view purchased_sessions as
